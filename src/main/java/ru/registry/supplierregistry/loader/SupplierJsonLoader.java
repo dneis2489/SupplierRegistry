@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ Реализует загрузку данных в реестр через чтение json файла
+ */
 @Component
 public class SupplierJsonLoader {
     private final ObjectMapper objectMapper;
