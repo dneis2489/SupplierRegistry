@@ -43,6 +43,7 @@ public class SupplierClient
         }
     }
 
+    //ПреобразуетJSON-ответа поставщика в Java-объект
     private record SupplierResponse(String status)
     {
     }

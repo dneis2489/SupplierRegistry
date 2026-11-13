@@ -7,10 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Suite
 @SelectPackages("ru.registry.supplierregistry")
-class SupplierRegistryApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
+class SupplierRegistryApplicationTests
+{
 }
