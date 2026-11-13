@@ -20,6 +20,9 @@ public class SupplierJsonLoader {
         this.objectMapper = objectMapper;
     }
 
+    /**
+        Метод преобразует данные из json файла в List
+     */
     public List<Supplier> load(Path filePath) throws IOException {
         return objectMapper.readValue(
                 filePath.toFile(),

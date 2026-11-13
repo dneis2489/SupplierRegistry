@@ -16,6 +16,9 @@ public class SubscriberService
         this.registry = registry;
     }
 
+    /**
+     Проверка наличия номера телефона у поставщика с указанным id
+     */
     public boolean isSubscriberAvailable(
             String supplierId,
             String phone

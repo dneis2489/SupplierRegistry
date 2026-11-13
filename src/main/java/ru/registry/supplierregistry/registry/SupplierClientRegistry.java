@@ -34,7 +34,9 @@ public class SupplierClientRegistry
         this.jsonLoader = jsonLoader;
     }
 
-    //Замена всех поставщиков
+    /**
+        Метод по замене всех поставщиков в реестре из переданного списка
+     */
     public void replaceAll(List<Supplier> suppliers)
     {
         Map<String, SupplierClient> newClients = new HashMap<>();
@@ -54,13 +56,17 @@ public class SupplierClientRegistry
         clients.set(Map.copyOf(newClients));
     }
 
-    //Загрузка данных для реестра из файла
+    /**
+     Метод по замене всех поставщиков в реестре из файла по переданному пути
+     */
     public void replaceFromFile(Path path) throws IOException {
         List<Supplier> suppliers = jsonLoader.load(path);
         replaceAll(suppliers);
     }
 
-    //Получение конкретного поставщика по id
+    /**
+     Получение конкретного поставщика по id
+     */
     public SupplierClient getClient(String supplierId)
     {
         SupplierClient client = clients.get().get(supplierId);
