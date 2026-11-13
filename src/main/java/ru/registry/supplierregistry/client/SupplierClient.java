@@ -2,12 +2,11 @@ package ru.registry.supplierregistry.client;
 
 import org.springframework.web.client.RestClient;
 import ru.registry.supplierregistry.entity.Supplier;
-import ru.registry.supplierregistry.interfaces.clientInterface.SupplierClientInterface;
 
 /**
     SupplierClient - объект, который умеет обращаться с одним конкретным поставщиком.
  */
-public class SupplierClient implements SupplierClientInterface
+public class SupplierClient
 {
     private final Supplier supplier;
     private final RestClient restClient;
@@ -23,7 +22,6 @@ public class SupplierClient implements SupplierClientInterface
     }
 
     // Выполняет GET запрос для определения доступности номера
-    @Override
     public boolean isAvailable(String phone)
     {
         try
@@ -31,7 +29,7 @@ public class SupplierClient implements SupplierClientInterface
             SupplierResponse response = restClient.get()
                     .uri("/subscribers/{phone}", phone)
                     .header("Authorization",
-                            "Bearer ", supplier.apiKey())
+                            "Bearer " + supplier.apiKey())
                     .retrieve()
                     .body(SupplierResponse.class);
 

@@ -1,21 +1,21 @@
 package ru.registry.supplierregistry.service;
 
+import org.springframework.stereotype.Service;
 import ru.registry.supplierregistry.client.SupplierClient;
-import ru.registry.supplierregistry.interfaces.registryInterfase.SupplierClientRegistryInterface;
-import ru.registry.supplierregistry.interfaces.serviceInterface.SubscriberServiceInterface;
+import ru.registry.supplierregistry.registry.SupplierClientRegistry;
 
 /**
  SubscriberService - реализует проверку доступности номера у указанного поставщика
  */
-public class SubscriberService implements SubscriberServiceInterface
+@Service
+public class SubscriberService
 {
-    private final SupplierClientRegistryInterface registry;
+    private final SupplierClientRegistry registry;
 
-    public SubscriberService(SupplierClientRegistryInterface registry) {
+    public SubscriberService(SupplierClientRegistry registry) {
         this.registry = registry;
     }
 
-    @Override
     public boolean isSubscriberAvailable(
             String supplierId,
             String phone

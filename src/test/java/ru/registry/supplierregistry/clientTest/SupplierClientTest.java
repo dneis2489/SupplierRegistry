@@ -48,7 +48,7 @@ class SupplierClientTest {
                 ))
                 .andExpect(method(HttpMethod.GET))
                 .andExpect(header(
-                        "Authorization", "Bearer "
+                        "Authorization", "Bearer test-api-key"
                 ))
                 .andRespond(withSuccess(
                         "{\"status\":\"ok\"}",
